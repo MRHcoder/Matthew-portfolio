@@ -161,7 +161,7 @@ export async function POST(request: NextRequest) {
     const openai = getOpenAIClient();
 
     const response = await openai.responses.create({
-      model: "gpt-5.5-mini",
+      model: "gpt-5.4-mini",
       input: conversationInput,
       max_output_tokens: chatConfig.maxOutputTokens,
     });
@@ -171,14 +171,18 @@ export async function POST(request: NextRequest) {
       remaining: limited.remaining,
     });
   } catch (error) {
-    console.error("MattBot API error:", error);
+  console.error("MattBot API error:", error);
 
-    return NextResponse.json(
-      {
-        error:
-          "MattBot had trouble generating a response. Please try again in a moment.",
-      },
-      { status: 500 }
-    );
-  }
+  const message =
+    error instanceof Error
+      ? error.message
+      : "Unknown MattBot API error";
+
+  return NextResponse.json(
+    {
+      error: `MattBot API error: ${message}`,
+    },
+    { status: 500 }
+  );
+}
 }
