@@ -7,7 +7,7 @@ import { profile } from "@/data/profile";
 
 export function Footer() {
   return (
-    <footer id="contact" className="border-t">
+    <footer className="border-t">
       <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-10 md:flex-row md:items-center md:justify-between">
         <p className="text-sm text-muted-foreground">
           {profile.name} · {profile.title}
