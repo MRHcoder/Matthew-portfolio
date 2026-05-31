@@ -1,0 +1,27 @@
+export const chatConfig = {
+  assistantName: "MattBot",
+
+  maxInputCharacters: 4000,
+
+  maxMessagesPerSession: 8,
+
+  maxOutputTokens: 800,
+
+  rateLimit: {
+    requests: 5,
+    windowMinutes: 10,
+  },
+
+  suggestedPrompts: [
+    "How is Matthew a fit for a Technical Program Manager role?",
+    "What is Matthew’s experience with cross-functional leadership?",
+    "Summarize Matthew’s AI startup experience.",
+    "Paste a job description and evaluate Matthew’s fit.",
+  ],
+
+  placeholder:
+    "Paste a question or job description here...",
+
+  introMessage:
+    "Hi, I’m MattBot. Ask me about Matthew’s TPM experience, systems engineering background, AI startup work, or fit for a specific job description.",
+};

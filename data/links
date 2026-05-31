@@ -1,0 +1,9 @@
+export const links = {
+  email: "mailto:matthewrhowell@yahoo.com",
+
+  linkedin: "https://www.linkedin.com/in/matthewrhowell/",
+
+  miroBoard: "https://miro.com/app/board/uXjVJdyF_SI=/?share_link_id=536883603476",
+
+  miroEmbed: "https://miro.com/embed/uXjVJdyF_SI=/?share_link_id=536883603476",
+};

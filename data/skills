@@ -1,0 +1,16 @@
+export const skills = [
+  "Technical Program Management",
+  "Systems Engineering",
+  "Product Ownership",
+  "Risk Management",
+  "Jira",
+  "Confluence",
+  "DOORS",
+  "Cameo",
+  "EVM",
+  "MS Project",
+  "Python",
+  "Power BI",
+  "Agile / Waterfall",
+  "Stakeholder Management",
+];
