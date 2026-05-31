@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "config/navigation", "config/chat"  ],
+, "config/navigation", "config/chat", "lib/rate-limit"  ],
   "exclude": ["node_modules"]
 }

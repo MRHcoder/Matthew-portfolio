@@ -46,7 +46,9 @@ export function MattBotSection() {
             MattBot is designed to help recruiters and hiring managers quickly
             understand my background, project experience, and fit for technical
             program management, product-adjacent, and AI/software delivery
-            roles.
+            roles. Click on a suggested prompt or type your own to get started. 
+            You can ask about my experience with specific technologies, projects, how 
+            I approach problem-solving and collaboration, or anything else about my background.
           </p>
 
           <div className="mt-8 space-y-4">

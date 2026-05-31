@@ -115,17 +115,46 @@ useEffect(() => {
     setInput("");
     setIsLoading(true);
 
-    // Temporary mock delay. In Phase 6 this will call /api/chat.
-    await new Promise((resolve) => setTimeout(resolve, 700));
+    try {
+  const response = await fetch("/api/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      messages: [...messages, userMessage].map((message) => ({
+        role: message.role,
+        content: message.content,
+      })),
+    }),
+  });
 
-    const assistantMessage = createMessage(
-      "assistant",
-      chatConfig.mockResponse
-    );
+  const data = await response.json();
 
-    setMessages((currentMessages) => [...currentMessages, assistantMessage]);
-    setLastAssistantMessageId(assistantMessage.id);
-    setIsLoading(false);
+  if (!response.ok) {
+    throw new Error(data.error || "MattBot failed to respond.");
+  }
+
+  const assistantMessage = createMessage(
+    "assistant",
+    data.message || "MattBot did not return a response."
+  );
+
+  setMessages((currentMessages) => [...currentMessages, assistantMessage]);
+  setLastAssistantMessageId(assistantMessage.id);
+} catch (error) {
+  const errorMessage =
+    error instanceof Error
+      ? error.message
+      : "MattBot had trouble responding. Please try again.";
+
+  const assistantMessage = createMessage("assistant", errorMessage);
+
+  setMessages((currentMessages) => [...currentMessages, assistantMessage]);
+  setLastAssistantMessageId(assistantMessage.id);
+} finally {
+  setIsLoading(false);
+}
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
