@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { chatConfig } from "@/config/chat";
-import { openai } from "@/lib/openai";
+import { getOpenAIClient } from "@/lib/openai";
 import { rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -157,6 +157,8 @@ export async function POST(request: NextRequest) {
         content: message.content,
       })),
     ];
+
+    const openai = getOpenAIClient();
 
     const response = await openai.responses.create({
       model: "gpt-5.5-mini",
