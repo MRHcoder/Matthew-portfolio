@@ -248,11 +248,22 @@ useEffect(() => {
             <Textarea
               value={input}
               onChange={(event) => setInput(event.target.value)}
-              placeholder={chatConfig.placeholder}
-              className="min-h-16 resize-none border-0 bg-transparent p-0 shadow-none focus-visible:ring-0"
-              maxLength={chatConfig.maxInputCharacters}
-              disabled={isLoading || hasReachedSessionLimit}
-            />
+              onKeyDown={(event) => {
+                if (event.key === "Enter" && !event.shiftKey) {
+                  event.preventDefault();
+
+                  if (!input.trim() || isLoading || hasReachedSessionLimit) {
+                    return;
+                  }
+
+                  event.currentTarget.form?.requestSubmit();
+                }
+            }}
+            placeholder={chatConfig.placeholder}
+            className="min-h-16 resize-none border-0 bg-transparent p-0 shadow-none focus-visible:ring-0"
+            maxLength={chatConfig.maxInputCharacters}
+            disabled={isLoading || hasReachedSessionLimit}
+          />
 
             <div className="mt-2 flex flex-col gap-3 border-t pt-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-xs text-muted-foreground">

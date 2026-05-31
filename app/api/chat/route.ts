@@ -170,19 +170,16 @@ export async function POST(request: NextRequest) {
       message: response.output_text,
       remaining: limited.remaining,
     });
+
   } catch (error) {
   console.error("MattBot API error:", error);
 
-  const message =
-    error instanceof Error
-      ? error.message
-      : "Unknown MattBot API error";
-
   return NextResponse.json(
     {
-      error: `MattBot API error: ${message}`,
+      error:
+        "MattBot had trouble generating a response. Please try again in a moment.",
     },
     { status: 500 }
   );
-}
+ }
 }
