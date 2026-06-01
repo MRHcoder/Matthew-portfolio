@@ -47,6 +47,10 @@ function validateMessages(messages: unknown): IncomingMessage[] | null {
   return validMessages;
 }
 
+function containsUrl(text: string) {
+  return /https?:\/\/\S+/i.test(text);
+}
+
 const systemPrompt = `
 You are MattBot, an interactive resume assistant for Matthew Howell.
 
@@ -98,6 +102,16 @@ When answering yes/no experience questions:
 - If the answer is nuanced, use “Yes, but…” or “Not in a formal capacity, but…”
 - Distinguish between formal employment, side projects, volunteer leadership, entrepreneurial work, and personal investment activity.
 - End with a short framing sentence explaining how the experience is relevant professionally.
+
+Job link handling rules:
+
+- If the user provides a URL and asks about fit for a role, attempt to use web search/web access to inspect the URL.
+- If you can access the page and find a job description, evaluate Matthew's fit using the actual job description.
+- If you cannot access the page, say: “I couldn’t access that job posting from the link. Please paste the job description here and I can evaluate Matthew’s fit.”
+- If you can access the page but cannot identify a job description, say: “I could open the link, but I couldn’t find a usable job description on the page. Please paste the job description here and I can evaluate Matthew’s fit.”
+- Do not infer the role from the URL alone.
+- Do not say “if this is a TPM role” or provide a hypothetical fit assessment when a link was provided but no job description was retrieved.
+- Do not fabricate requirements, responsibilities, company details, compensation, location, or qualifications.
 
 Keep answers professional, direct, conversational, and grounded.
 Do not include file citations, source IDs, document titles, or robotic formatting.
@@ -178,11 +192,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const userProvidedUrl = containsUrl(latestUserMessage.content);
+
     const conversationInput = [
       {
         role: "system" as const,
         content: systemPrompt,
       },
+      ...(userProvidedUrl
+        ? [
+            {
+              role: "system" as const,
+              content:
+                "The user provided a URL. If they are asking about job fit, do not answer hypothetically from the URL alone. Use web search/web access to find the job description. If the page cannot be accessed or no job description is found, ask the user to paste the job description.",
+            },
+          ]
+        : []),
       ...messages.map((message) => ({
         role: message.role,
         content: message.content,
@@ -210,6 +235,9 @@ export async function POST(request: NextRequest) {
         {
           type: "file_search",
           vector_store_ids: [vectorStoreId],
+        },
+        {
+          type: "web_search",
         },
       ],
       max_output_tokens: chatConfig.maxOutputTokens,
