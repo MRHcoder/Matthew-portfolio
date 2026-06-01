@@ -6,7 +6,7 @@ export function SkillsSection() {
   return (
     <section id="skills" className={`border-t ${themeConfig.sectionMutedBackground}`}>
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+        <p className={themeConfig.sectionLabel}>
           Skills
         </p>
 
@@ -16,7 +16,11 @@ export function SkillsSection() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           {skills.map((skill) => (
-            <Badge key={skill} variant="secondary" className="px-3 py-1">
+            <Badge
+              key={skill}
+              variant="outline"
+              className="rounded-full border-sky-500/20 bg-sky-500/5 px-3 py-1 text-sky-800"
+            >
               {skill}
             </Badge>
           ))}

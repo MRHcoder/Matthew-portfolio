@@ -4,7 +4,6 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
-import { SkillsSection } from "@/components/sections/SkillsSection";
 import { MiroSection } from "@/components/sections/MiroSection";
 import { MattBotSection } from "@/components/sections/MattBotSection";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -19,7 +18,6 @@ export default function Home() {
       <AboutSection />
       <ExperienceSection />
       <PortfolioSection />
-      <SkillsSection />
       <MiroSection />
       <MattBotSection />
       <ContactSection />

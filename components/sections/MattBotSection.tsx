@@ -1,40 +1,40 @@
 import {
   BriefcaseBusiness,
   FileSearch,
-  MessagesSquare,
   Presentation,
 } from "lucide-react";
 
 import { ChatBot } from "@/components/chat/ChatBot";
 import { chatConfig } from "@/config/chat";
+import { themeConfig } from "@/config/theme";
 
 const mattBotCapabilities = [
   {
     icon: BriefcaseBusiness,
     title: "Role fit",
     description:
-      "Paste a job description and ask how my background maps to the role.",
+      "Paste a job description or job posting link and ask how my background maps to the role.",
   },
   {
     icon: FileSearch,
     title: "Experience lookup",
     description:
-      "Ask about program management, systems engineering, product ownership, or AI startup work.",
+      "Ask about program management, systems engineering, product ownership, AI startup work, or leadership experience.",
   },
   {
     icon: Presentation,
-    title: "Interview prep",
+    title: "Get to know me",
     description:
-      "Surface relevant examples, strengths, gaps, and talking points.",
+      "Surface relevant examples, strengths, gaps, and talking points about my background.",
   },
 ];
 
 export function MattBotSection() {
   return (
-    <section id="mattbot" className="border-t">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+    <section id="mattbot" className="border-t bg-sky-50/50">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
-          <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+          <p className={themeConfig.sectionLabel}>
             {chatConfig.assistantName}
           </p>
 
@@ -42,7 +42,7 @@ export function MattBotSection() {
             Ask questions about my background or paste a job description.
           </h2>
 
-          <p className="mt-5 leading-8 text-muted-foreground">
+          <p className="mt-5 text-lg leading-8 text-muted-foreground">
             MattBot is designed to help recruiters and hiring managers quickly
             understand my background, project experience, and fit for technical
             program management, product-adjacent, and AI/software delivery
@@ -58,14 +58,14 @@ export function MattBotSection() {
               return (
                 <div
                   key={item.title}
-                  className="grid gap-4 rounded-2xl border bg-background p-5 sm:grid-cols-[72px_1fr] sm:items-center"
+                  className="grid gap-4 rounded-2xl border bg-background p-5 shadow-sm sm:grid-cols-[80px_1fr] sm:items-center"
                 >
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary sm:mx-0">
-                    <Icon className="h-7 w-7" />
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500/15 to-indigo-500/15 text-sky-700 sm:mx-0">
+                    <Icon className="h-8 w-8" />
                   </div>
 
                   <div className="text-center sm:text-left">
-                    <p className="font-medium">{item.title}</p>
+                    <p className="text-lg font-medium">{item.title}</p>
                     <p className="mt-1 text-sm leading-6 text-muted-foreground">
                       {item.description}
                     </p>
@@ -73,15 +73,6 @@ export function MattBotSection() {
                 </div>
               );
             })}
-          </div>
-
-          <div className="mt-6 flex items-start gap-3 rounded-2xl border bg-muted/30 p-4 text-sm leading-7 text-muted-foreground">
-            <MessagesSquare className="mt-1 h-4 w-4 shrink-0" />
-            <p>
-              This is currently a front-end preview. In the next phase, responses
-              will be generated server-side with rate limits, output limits, and
-              resume/project grounding.
-            </p>
           </div>
         </div>
 
