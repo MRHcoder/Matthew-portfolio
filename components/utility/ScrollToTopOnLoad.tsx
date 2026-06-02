@@ -8,8 +8,32 @@ export function ScrollToTopOnLoad() {
       window.history.scrollRestoration = "manual";
     }
 
-    window.history.replaceState(null, "", window.location.pathname);
-    window.scrollTo({ top: 0, left: 0 });
+    const hash = window.location.hash;
+
+    if (hash) {
+      const sectionId = hash.replace("#", "");
+
+      window.setTimeout(() => {
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+          section.scrollIntoView({
+            behavior: "auto",
+            block: "start",
+          });
+        }
+      }, 100);
+
+      return;
+    }
+
+    window.setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto",
+      });
+    }, 0);
   }, []);
 
   return null;

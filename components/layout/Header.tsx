@@ -30,12 +30,12 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
-          href="#"
+          href="/"
           className="font-semibold tracking-tight"
           onClick={(event) => {
             event.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
-            window.history.pushState(null, "", "/");
+            window.history.pushState(null, "", window.location.pathname);
           }}
         >
           {profile.name}

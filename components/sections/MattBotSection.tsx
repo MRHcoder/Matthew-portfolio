@@ -31,7 +31,7 @@ const mattBotCapabilities = [
 
 export function MattBotSection() {
   return (
-    <section id="mattbot" className="border-t bg-sky-50/50">
+    <section id="mattbot" className="border-t bg-sky-50">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <p className={themeConfig.sectionLabel}>
@@ -42,7 +42,7 @@ export function MattBotSection() {
             Ask questions about my background or paste a job description.
           </h2>
 
-          <p className="mt-5 text-lg leading-8 text-muted-foreground">
+          <p className="mt-5 text-lg leading-8 text-slate-600">
             MattBot is designed to help recruiters and hiring managers quickly
             understand my background, project experience, and fit for technical
             program management, product-adjacent, and AI/software delivery
@@ -58,15 +58,17 @@ export function MattBotSection() {
               return (
                 <div
                   key={item.title}
-                  className="grid gap-4 rounded-2xl border bg-background p-5 shadow-sm sm:grid-cols-[80px_1fr] sm:items-center"
+                  className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:grid-cols-[80px_1fr] sm:items-center"
                 >
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500/15 to-indigo-500/15 text-sky-700 sm:mx-0">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-100 text-sky-700 sm:mx-0">
                     <Icon className="h-8 w-8" />
                   </div>
 
                   <div className="text-center sm:text-left">
-                    <p className="text-lg font-medium">{item.title}</p>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                    <p className="text-lg font-medium text-slate-950">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-slate-600">
                       {item.description}
                     </p>
                   </div>
