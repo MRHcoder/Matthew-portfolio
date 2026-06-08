@@ -15,7 +15,30 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Matthew Howell | Technical Program Manager",
   description:
-    "Interactive resume and portfolio for Matthew Howell, a Technical Program Manager with aerospace systems engineering, product ownership, and AI/software delivery experience.",
+    "Interactive resume and portfolio for Matthew Howell, a Technical Program Manager with aerospace systems engineering, product ownership, AI startup, and software delivery experience.",
+  openGraph: {
+    title: "Matthew Howell | Technical Program Manager",
+    description:
+      "Explore Matthew Howell’s interactive resume, technical program management background, AI startup work, Miro roadmap, and MattBot assistant.",
+    url: "https://matthew-portfolio-pi.vercel.app",
+    siteName: "Matthew Howell Portfolio",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Matthew Howell Technical Program Manager Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matthew Howell | Technical Program Manager",
+    description:
+      "Interactive resume and portfolio for Matthew Howell, Technical Program Manager.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
