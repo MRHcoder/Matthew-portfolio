@@ -20,7 +20,7 @@ export const metadata = {
     title: "Matthew Howell | Technical Program Manager",
     description:
       "Explore Matthew Howell’s interactive resume, technical program management background, AI startup work, Miro roadmap, and MattBot assistant.",
-    url: "https://matthew-portfolio-pi.vercel.app",
+    url: "https://matthewrhowell.com",
     siteName: "Matthew Howell Portfolio",
     type: "website",
     images: [
