@@ -4,7 +4,7 @@ import { experience } from "@/data/experience";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="border-t bg-slate-50">
+    <section id="experience" className={`border-t ${themeConfig.sectionBlueBackground}`}>
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="mb-8 max-w-4xl">
           <p className={themeConfig.sectionLabel}>Experience</p>

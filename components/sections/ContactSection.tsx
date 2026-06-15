@@ -22,7 +22,7 @@ function LinkedInIcon({ className }: { className?: string }) {
 
 export function ContactSection() {
   return (
-    <section id="contact" className="border-t bg-slate-50/70">
+    <section id="contact" className="border-t bg-slate-50 bg-[radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.16),_transparent_32%),radial-gradient(circle_at_bottom_left,_rgba(99,102,241,0.14),_transparent_30%)]">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-8 md:grid-cols-[0.9fr_0.85fr] md:items-center">
           <div>

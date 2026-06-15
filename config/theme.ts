@@ -2,8 +2,11 @@ export const themeConfig = {
   heroGradient:
     "bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.16),_transparent_32%),radial-gradient(circle_at_top_right,_rgba(99,102,241,0.14),_transparent_30%)]",
 
-  sectionMutedBackground:
-    "bg-[linear-gradient(180deg,_rgba(248,250,252,0.75),_rgba(241,245,249,0.55))]",
+  sectionGrayBackground:
+    "bg-slate-50",
+
+  sectionBlueBackground:
+    "bg-sky-50",
 
   darkSectionBackground:
     "bg-slate-950 text-white",

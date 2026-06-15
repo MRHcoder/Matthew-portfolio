@@ -20,7 +20,7 @@ const projectIcons = {
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="border-t bg-slate-50/70">
+    <section id="portfolio" className={`border-t ${themeConfig.sectionGrayBackground}`}>
       <div className="mx-auto max-w-6xl px-6 py-16">
         <p className={themeConfig.sectionLabel}>Portfolio</p>
 

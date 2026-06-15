@@ -31,7 +31,7 @@ const mattBotCapabilities = [
 
 export function MattBotSection() {
   return (
-    <section id="mattbot" className="border-t bg-sky-50">
+    <section id="mattbot" className={`border-t ${themeConfig.sectionBlueBackground}`}>
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <p className={themeConfig.sectionLabel}>

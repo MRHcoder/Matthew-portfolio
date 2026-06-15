@@ -4,7 +4,7 @@ import { skills } from "@/data/skills";
 
 export function SkillsSection() {
   return (
-    <section id="skills" className={`border-t ${themeConfig.sectionMutedBackground}`}>
+    <section id="skills" className={`border-t ${themeConfig.sectionGrayBackground}`}>
       <div className="mx-auto max-w-6xl px-6 py-20">
         <p className={themeConfig.sectionLabel}>
           Skills
