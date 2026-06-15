@@ -10,7 +10,7 @@ export function MiroSection() {
   const hasEmbed = Boolean(links.miroEmbed);
 
   return (
-    <section id="miro" className="border-t bg-slate-50/70">
+    <section id="miro" className={`border-t ${themeConfig.sectionBlueBackground}`}>
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">

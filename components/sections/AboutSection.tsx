@@ -3,7 +3,7 @@ import { profile } from "@/data/profile";
 
 export function AboutSection() {
   return (
-    <section id="about" className="border-t bg-slate-50/70">
+    <section id="about" className={`border-t ${themeConfig.sectionGrayBackground}`}>
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="max-w-4xl">
           <p className={themeConfig.sectionLabel}>About</p>
