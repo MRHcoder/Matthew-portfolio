@@ -22,29 +22,31 @@ function LinkedInIcon({ className }: { className?: string }) {
 
 export function ContactSection() {
   return (
-    <section id="contact" className="border-t bg-slate-50 bg-[radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.16),_transparent_32%),radial-gradient(circle_at_bottom_left,_rgba(99,102,241,0.14),_transparent_30%)]">
+    <section
+      id="contact"
+      className="border-t bg-slate-50 bg-[radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.16),_transparent_32%),radial-gradient(circle_at_bottom_left,_rgba(99,102,241,0.14),_transparent_30%)]"
+    >
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-8 md:grid-cols-[0.9fr_0.85fr] md:items-center">
           <div>
             <p className={themeConfig.sectionLabel}>Contact</p>
 
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
               Let’s connect.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+            <p className="mt-5 text-lg leading-8 text-slate-950">
               Reach out by email, view my LinkedIn profile, or download my
               resume for a more traditional summary of my background.
             </p>
           </div>
 
-          <Card className="mx-auto w-full max-w-md rounded-3xl border-sky-500/20 bg-gradient-to-br from-background to-sky-500/5 shadow-md">
+          <Card className="mx-auto w-full max-w-md rounded-3xl border-sky-500/20 bg-white shadow-md">
             <CardContent className="grid gap-3 p-6">
               <Button
                 asChild
-                variant="outline"
                 size="lg"
-                className="h-11 justify-center gap-2 rounded-xl bg-background/80 text-base font-medium"
+                className="h-11 justify-center gap-2 rounded-xl bg-sky-700 text-base font-medium text-white shadow-sm hover:bg-sky-800"
               >
                 <Link href={links.email}>
                   <Mail className="h-5 w-5" />
@@ -56,7 +58,7 @@ export function ContactSection() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="h-11 justify-center gap-2 rounded-xl bg-background/80 text-base font-medium"
+                className="h-11 justify-center gap-2 rounded-xl border-sky-700 bg-white text-base font-medium text-sky-800 shadow-sm hover:bg-sky-50 hover:text-sky-900"
               >
                 <Link href={links.linkedin} target="_blank">
                   <LinkedInIcon className="h-5 w-5" />
@@ -68,7 +70,7 @@ export function ContactSection() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="h-11 justify-center gap-2 rounded-xl bg-background/80 text-base font-medium"
+                className="h-11 justify-center gap-2 rounded-xl border-sky-700 bg-white text-base font-medium text-sky-800 shadow-sm hover:bg-sky-50 hover:text-sky-900"
               >
                 <Link href={profile.resumePath}>
                   <FileText className="h-5 w-5" />
