@@ -24,11 +24,11 @@ export function ExperienceSection() {
                   <p className="text-lg font-semibold text-slate-950">
                     {item.role}
                   </p>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm font-medium text-slate-950">
                     {item.company} · {item.period}
                   </p>
                 </div>
-                <p className="text-base leading-7 text-slate-600">
+                <p className="text-base leading-7 text-slate-950">
                   {item.description}
                 </p>
               </CardContent>

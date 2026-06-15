@@ -2,8 +2,8 @@ import Link from "next/link";
 import {
   BriefcaseBusiness,
   ExternalLink,
-  Map,
-  MessageSquare,
+  Sparkles,
+  Workflow,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -14,8 +14,8 @@ import { projects } from "@/data/projects";
 
 const projectIcons = {
   program: BriefcaseBusiness,
-  startup: MessageSquare,
-  roadmap: Map,
+  startup: Sparkles,
+  process: Workflow,
 };
 
 export function PortfolioSection() {
@@ -25,7 +25,7 @@ export function PortfolioSection() {
         <p className={themeConfig.sectionLabel}>Portfolio</p>
 
         <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-          Selected work and project artifacts.
+          What I've Accomplished.
         </h2>
 
         <div className="mt-8 grid gap-5 md:grid-cols-3">
