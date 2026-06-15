@@ -32,16 +32,15 @@ export function HeroSection() {
             {profile.headline}
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-950">
             {profile.summary}
           </p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <Button
               asChild
-              variant="outline"
               size="lg"
-              className="rounded-full bg-background/80"
+              className="rounded-full bg-sky-700 text-white shadow-sm hover:bg-sky-800"
             >
               <Link href="#mattbot">
                 Ask MattBot <ArrowRight className="ml-2 h-4 w-4" />
@@ -52,7 +51,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="rounded-full bg-background/80"
+              className="rounded-full border-sky-700 bg-white text-sky-800 shadow-sm hover:bg-sky-50 hover:text-sky-900"
             >
               <Link href={profile.resumePath}>
                 Download Resume <Download className="ml-2 h-4 w-4" />
@@ -63,7 +62,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="rounded-full bg-background/80"
+              className="rounded-full border-sky-700 bg-white text-sky-800 shadow-sm hover:bg-sky-50 hover:text-sky-900"
             >
               <Link href={links.email}>
                 Email Me <Mail className="ml-2 h-4 w-4" />
@@ -74,7 +73,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="rounded-full bg-background/80"
+              className="rounded-full border-sky-700 bg-white text-sky-800 shadow-sm hover:bg-sky-50 hover:text-sky-900"
             >
               <Link href={links.linkedin} target="_blank">
                 LinkedIn <ExternalLink className="ml-2 h-4 w-4" />
@@ -84,7 +83,7 @@ export function HeroSection() {
         </div>
 
         <Card
-          className={`rounded-3xl bg-background/80 shadow-xl backdrop-blur ${themeConfig.cardAccentBorder}`}
+          className={`rounded-3xl bg-white shadow-xl ${themeConfig.cardAccentBorder}`}
         >
           <CardContent className="p-6">
             <p className="text-center text-lg font-bold uppercase tracking-wider text-sky-700 md:text-xl">
@@ -93,27 +92,39 @@ export function HeroSection() {
 
             <div className="mt-5 space-y-4">
               <div>
-                <p className="text-lg font-semibold text-slate-950">Cross-Functional Leadership</p>
+                <p className="text-lg font-semibold text-slate-950">
+                  Cross-Functional Leadership
+                </p>
                 <p className="text-sm leading-6 text-slate-950">
-                  Enabling teams to execute effectively by removing blockers, aligning stakeholders, and challenging process friction when it gets in the way of delivery.
+                  Enabling teams to execute effectively by removing blockers,
+                  aligning stakeholders, and challenging process friction when it
+                  gets in the way of delivery.
                 </p>
               </div>
 
               <Separator />
 
               <div>
-                <p className="text-lg font-semibold text-slate-950">Execution Focused</p>
+                <p className="text-lg font-semibold text-slate-950">
+                  Execution Focused
+                </p>
                 <p className="text-sm leading-6 text-slate-950">
-                  Goal-oriented program leader with a track record of turning complex technical work into clear plans, accountable milestones, and delivered hardware/software outcomes.
+                  Goal-oriented program leader with a track record of turning
+                  complex technical work into clear plans, accountable milestones,
+                  and delivered hardware/software outcomes.
                 </p>
               </div>
 
               <Separator />
 
               <div>
-                <p className="text-lg font-semibold text-slate-950">Technical Foundation</p>
+                <p className="text-lg font-semibold text-slate-950">
+                  Technical Foundation
+                </p>
                 <p className="text-sm leading-6 text-slate-950">
-                  Systems engineering and product ownership experience provide the technical fluency to connect engineering detail with program priorities and stakeholder decisions.
+                  Systems engineering and product ownership experience provide
+                  the technical fluency to connect engineering detail with program
+                  priorities and stakeholder decisions.
                 </p>
               </div>
             </div>
