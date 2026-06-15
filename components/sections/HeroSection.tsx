@@ -87,36 +87,33 @@ export function HeroSection() {
           className={`rounded-3xl bg-background/80 shadow-xl backdrop-blur ${themeConfig.cardAccentBorder}`}
         >
           <CardContent className="p-6">
-            <p className="text-center text-sm font-semibold uppercase tracking-wider text-sky-700">
-              Focus Areas
+            <p className="text-center text-lg font-bold uppercase tracking-wider text-sky-700 md:text-xl">
+              What I Bring
             </p>
 
             <div className="mt-5 space-y-4">
               <div>
-                <p className="font-medium">Program Leadership</p>
-                <p className="text-sm leading-6 text-muted-foreground">
-                  Leading complex work across cost, schedule, technical risk,
-                  stakeholder alignment, and cross-functional execution.
+                <p className="text-lg font-semibold text-slate-950">Cross-Functional Leadership</p>
+                <p className="text-sm leading-6 text-slate-950">
+                  Enabling teams to execute effectively by removing blockers, aligning stakeholders, and challenging process friction when it gets in the way of delivery.
                 </p>
               </div>
 
               <Separator />
 
               <div>
-                <p className="font-medium">Systems Engineering</p>
-                <p className="text-sm leading-6 text-muted-foreground">
-                  Requirements, verification and validation, interface control,
-                  MBSE-related workflows, and technical decision support.
+                <p className="text-lg font-semibold text-slate-950">Execution Focused</p>
+                <p className="text-sm leading-6 text-slate-950">
+                  Goal-oriented program leader with a track record of turning complex technical work into clear plans, accountable milestones, and delivered hardware/software outcomes.
                 </p>
               </div>
 
               <Separator />
 
               <div>
-                <p className="font-medium">AI / Software Delivery</p>
-                <p className="text-sm leading-6 text-muted-foreground">
-                  Startup TPM experience supporting AI-enabled app development,
-                  roadmap planning, sprint structure, and modern web tooling.
+                <p className="text-lg font-semibold text-slate-950">Technical Foundation</p>
+                <p className="text-sm leading-6 text-slate-950">
+                  Systems engineering and product ownership experience provide the technical fluency to connect engineering detail with program priorities and stakeholder decisions.
                 </p>
               </div>
             </div>

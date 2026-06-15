@@ -9,7 +9,7 @@ export function AboutSection() {
           <p className={themeConfig.sectionLabel}>About</p>
 
           <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-            I bridge technical engineering detail with program-level execution.
+            I turn complex technical work into clear execution paths.
           </h2>
 
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
