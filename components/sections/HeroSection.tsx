@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -17,8 +18,21 @@ import { profile } from "@/data/profile";
 
 export function HeroSection() {
   return (
-    <section className={`${themeConfig.heroGradient} border-b`}>
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[1.3fr_0.7fr] md:items-center">
+    <section className={`${themeConfig.heroGradient} relative overflow-hidden border-b`}>
+      <div className="pointer-events-none absolute left-18 top-1/2 hidden -translate-y-1/2 xl:block 2xl:left-22">
+        <div className="relative h-70 w-70 overflow-hidden rounded-full border-4 border-white bg-white shadow-xl shadow-sky-500/10">
+          <Image
+            src="/matthew-headshot.jpg"
+            alt="Matthew Howell"
+            fill
+            priority
+            sizes="260px"
+            className="object-cover object-[35%_top]"
+          />
+        </div>
+
+      </div>
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 xl:pl-24 2xl:pl-32 md:grid-cols-[1.3fr_0.7fr] md:items-center">
         <div>
           <Badge
             className="mb-5 rounded-full border-sky-500/20 bg-sky-500/10 text-sky-700"
